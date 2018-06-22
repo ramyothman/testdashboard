@@ -1,3 +1,4 @@
+import { AdvanceConsole } from './../../projects/festo-dashboard/src/lib/shared/advance-console';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  constructor() {
+
+  }
 }

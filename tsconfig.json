@@ -15,6 +15,16 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "FestoDashboard": [
+        "dist/festo-dashboard",
+        "dist/festo-dashboard"
+      ],
+      "FestoDashboard/*": [
+        "dist/festo-dashboard/*",
+        "dist/festo-dashboard/*"
+      ]
+    }
   }
 }

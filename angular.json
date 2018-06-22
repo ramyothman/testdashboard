@@ -125,6 +125,46 @@
           }
         }
       }
+    },
+    "FestoDashboard": {
+      "root": "projects/festo-dashboard",
+      "sourceRoot": "projects/festo-dashboard/src",
+      "projectType": "library",
+      "prefix": "festo",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/festo-dashboard/tsconfig.lib.json",
+            "project": "projects/festo-dashboard/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/festo-dashboard/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/festo-dashboard/src/test.ts",
+            "tsConfig": "projects/festo-dashboard/tsconfig.spec.json",
+            "karmaConfig": "projects/festo-dashboard/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/festo-dashboard/tsconfig.lib.json",
+              "projects/festo-dashboard/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "festo-dashboard-web"
