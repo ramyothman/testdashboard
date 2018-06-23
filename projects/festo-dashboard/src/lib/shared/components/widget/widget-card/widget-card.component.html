@@ -1,0 +1,44 @@
+<festo-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="column" fxFlex="100" fxFlex.gt-xs="50"
+  fxFlex.gt-md="25">
+
+  <!-- Front -->
+  <div class="festo-widget-front white-bg elevation-z2">
+    <div class="pl-16 pr-8 py-16 h-52">
+
+      <button mat-icon-button festoWidgetToggle aria-label="more">
+        more
+      </button>
+    </div>
+
+    <div class="pt-8 pb-32 align-center">
+      <div class="light-blue-fg font-size-72 line-height-72">
+        10
+      </div>
+      <div class="h3 secondary-text font-weight-500">Due Tasks
+      </div>
+    </div>
+
+    <div class="p-16 grey-50-bg border-top align-center widget-footer" >
+      <span class="h4 secondary-text text-truncate">
+        Due Tasks:
+      </span>
+      <span class="h4 ml-8">
+        10
+      </span>
+    </div>
+  </div>
+  <!-- / Front -->
+
+  <!-- Back -->
+  <div class="festo-widget-back p-16 pt-32 white-bg elevation-z2 ">
+    <button mat-icon-button festoWidgetToggle class="festo-widget-flip-button" aria-label="Flip widget">
+      close
+    </button>
+
+    <div>
+      some detail text here
+    </div>
+  </div>
+  <!-- / Back -->
+
+</festo-widget>

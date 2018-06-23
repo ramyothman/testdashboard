@@ -1,12 +1,15 @@
+import { Widget } from './../models/widget';
 import { environment } from './../../../../../src/environments/environment';
-import { combineReducers, ActionReducerMap, compose, createSelector, ActionReducer, MetaReducer } from '@ngrx/store';
+import { combineReducers, ActionReducerMap, compose, createSelector, createFeatureSelector, ActionReducer, MetaReducer } from '@ngrx/store';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { storeLogger } from 'ngrx-store-logger';
 
 import * as fromDashboard from './dashboard';
+import * as fromWidget from './widget';
 
 export interface AppState {
   dashboard: fromDashboard.DashboardState;
+  widget: fromWidget.WidgetState;
 }
 
 export function logger(reducer: ActionReducer<AppState>): any {
@@ -15,7 +18,8 @@ export function logger(reducer: ActionReducer<AppState>): any {
 }
 
 export const reducers: ActionReducerMap<AppState> = {
-  dashboard: fromDashboard.reducer
+  dashboard: fromDashboard.reducer,
+  widget: fromWidget.reducer
 };
 
 
@@ -29,3 +33,4 @@ export const metaReducers: MetaReducer<AppState>[] = !environment.production
   : [];
 
 export const getDashboardState = (state: AppState) => state.dashboard;
+export const getWidgetState = (state: AppState) => state.widget;

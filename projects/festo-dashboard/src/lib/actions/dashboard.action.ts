@@ -1,4 +1,3 @@
-import { ApiPaginateResponse } from './../services/models/api-paginate-response';
 import { Dashboard } from './../models/dashboard';
 import { Action } from '@ngrx/store';
 

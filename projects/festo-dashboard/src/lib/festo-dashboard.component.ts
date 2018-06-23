@@ -1,17 +1,14 @@
 
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { dashboardAnimations } from './shared/animations';
 import { Store, select } from '@ngrx/store';
 import * as dashboardActions from './actions/dashboard.action';
 import * as fromDashboard from './reducers/dashboard';
 @Component({
   selector: 'festo-dashboard',
-  template: `
-    <p>
-      festo-dashboard works!
-      <button (click)="onClick()">Click Me</button>
-    </p>
-  `,
-  styles: [],
+  templateUrl  : './festo-dashboard.component.html',
+  styleUrls: ['./festo-dashboard.component.scss'],
+  animations   : dashboardAnimations,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FestoDashboardComponent implements OnInit {

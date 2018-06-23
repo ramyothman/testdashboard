@@ -1,3 +1,4 @@
+import { FestoWidgetModule } from './shared/components/widget/widget.module';
 import { DashboardService } from './services/dashboard.service';
 import { environment } from './../../../../src/environments/environment.prod';
 import { BaseApiService } from './services/base-api.service';
@@ -6,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { FestoDashboardComponent } from './festo-dashboard.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserModule} from '@angular/platform-browser';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { StoreModule, MetaReducer } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -16,6 +18,7 @@ import localeCs from '@angular/common/locales/cs';
 import { reducers, AppState, metaReducers } from './reducers';
 import { DashboardEffects } from './effects/dashboard.effect';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 registerLocaleData(localeDe);
 registerLocaleData(localeCs);
 
@@ -32,6 +35,8 @@ export class HashTranslateLoader implements TranslateLoader {
 @NgModule({
   imports: [
     CommonModule,
+    BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     StoreModule,
     TranslateModule.forRoot({
@@ -44,7 +49,8 @@ export class HashTranslateLoader implements TranslateLoader {
     EffectsModule.forRoot([
       DashboardEffects
     ]),
-    StoreDevtoolsModule.instrument()
+    StoreDevtoolsModule.instrument(),
+    FestoWidgetModule
   ],
   declarations: [FestoDashboardComponent],
   exports: [FestoDashboardComponent],
